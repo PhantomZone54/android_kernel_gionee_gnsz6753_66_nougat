@@ -30,10 +30,9 @@ script:
   - export ARCH=arm64
   - export KBUILD_BUILD_USER="ALGPHELLO"
   - export KBUILD_BUILD_HOST="fujitsu"
-  - cd /home/travis/build/ALGPHELLO/android_kernel_gionee_gnsz6753_66_nougat
-  #- mkdir -p out
-  #- make O=out clean
-  #- make O=out mrproper
+  - KERNEL_DIR=$PWD/android_kernel_gionee_gnsz6753_66_nougat
+  - ZIMAGE=$KERNEL_DIR/arch/arm64/boot/Image
+  - mkdir -p out
   - make gnsz6753_66_n_defconfig
   - make -j16
  
